@@ -1,0 +1,268 @@
+/*
+ Theme Name:   WHAPOW
+ Theme URI:
+ Description:  WHAPOW Storefront Child-Theme
+ Author:       Leonard Puhl
+ Author URI:   http://example.com
+ Template:     storefront
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  storefront
+*/
+
+
+@font-face {
+  font-family: "MTT Milano Medium";
+  src: url("fonts/medium.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTT Milano Black";
+  src: url("fonts/black.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'MTT Milano Black', sans-serif;
+}
+
+body, button, input, textarea {
+  font-family: 'MTT Milano Medium', sans-serif;
+  color: black;
+
+}
+
+/* WHOOCOMMERCE OVERWRITES */
+
+.woocommerce-error, .woocommerce-info, .woocommerce-message, .woocommerce-noreviews, p.no-comments {
+  background-color: inherit !important;
+  border: 2px solid black;
+  border-radius: 0;
+  color: #000;
+}
+
+.woocommerce-error li {
+  display: inline-block;
+  border-bottom: 1px solid red;
+}
+
+.woocommerce-message a {
+  color: #000;
+}
+
+.woocommerce-message a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+
+.home {
+}
+
+
+/* OWN STYLES */
+
+
+.home {
+  /*background: url("http://localhost/wp-content/uploads/2017/06/cream_dust.png");*/
+  background: #fff;
+  background-position: 50% 0%;
+  background-image: url("images/test4.png"), linear-gradient(to top left,rgba(224,255,0, 0.6),rgba(224,0,255, 0.6));
+  /*background-image: url("images/test4.png");*/
+  /*background-color: rgb(255,232,0);*/
+
+  /*background-color: rgb(235,235,235);*/
+  transition: all .4s;
+}
+
+.whapow-product-row {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .whapow-product-row {
+    width: 50%;
+    float: left;
+  }
+}
+
+.whapow-product {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.whapow-product:hover .whapow-image-background {
+  /*background: rgb(240,240,240);*/
+  z-index: 2;
+  /*border: 10px solid rgb(0, 163,226);*/
+}
+
+.whapow-product:hover .whapow-product-image {
+  /*background: rgb(240,240,240);*/
+  z-index: 6;
+  /*border: 10px solid rgb(0, 163,226);*/
+}
+
+.whapow-product:hover .whapow-cta {
+  /*text-decoration: underline;*/
+}
+
+.whapow-image-row {
+  width: 40%;
+  float: left;
+  position: relative;
+}
+
+.whapow-content-row {
+  width: 60%;
+  float: left;
+  padding-top: 50px;
+  position: relative;
+  z-index: 7;
+}
+
+.whapow-product-description {
+  position: relative;
+  margin-bottom: 100px;
+  transition: padding .4s;
+
+}
+
+.whapow-product-description ul {
+  list-style: none !important;
+  margin: 0;
+}
+
+.whapow-product-description ul li:before {
+  content:'+ ';
+
+}
+
+.whapow-product-description ul li {
+  line-height: 1.8em;
+  /*font-size: 1.5em;*/
+}
+
+.whapow-product-image {
+  width: 200%;
+  max-width: 200% !important;
+  display: block;
+  margin-left: -50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position:relative;
+  z-index: 5;
+
+  -webkit-transition: margin .4s;
+    transition: margin .4s;
+}
+
+.whapow-product-image:hover, .whapow-product.hover .whapow-product-image {
+  margin-top: 10px;
+  margin-bottom: 30px;
+
+
+}
+
+.whapow-image-background {
+  position: absolute;
+  left: -25%;
+  right: -25%;
+  top: 0;
+  bottom: 0;
+  /*background: rgb(240,240,240);*/
+  background: url("http://localhost/wp-content/uploads/2017/06/dust.png");
+  /*background-image: linear-gradient(to top left,rgba(224,255,0, 0.6),rgba(224,0,255, 0.6));*/
+  /*background: rgb(0, 163,226);*/
+  z-index: 1;
+}
+
+.whapow-cta {
+  margin-top: 100px;
+  padding: 10px;
+  /*background: rgb(0, 163,226);*/
+  border: 2px solid black;
+  color: black;
+  font-size: 1.5em;
+  /*display: block;*/
+  /*text-align: center !important;*/
+}
+
+.whapow-cta:hover, .whapow-product.hover .whapow-cta {
+  /*border-color: rgb(0, 163,226);*/
+  /*color: rgb(0, 163,226);*/
+  background-color: #000;
+  color: #fff
+  /*text-decoration: underline;*/
+}
+
+.whapow-product-title {
+  font-size: 5em;
+  transition: padding .4s;
+}
+
+.whapow-product.hover .whapow-product-title {
+  /*font-size: 5em;*/
+  /*line-height: inherit;*/
+  /*text-decoration: underline;*/
+}
+
+#whapow-banana {
+  margin-top: 70px;
+}
+#whapow-banana .whapow-content-row {
+  padding-left: 3%;
+}
+
+#whapow-banana .whapow-product-image {
+  /*margin-left: 10%;*/
+}
+
+#whapow-banana .whapow-product-description {
+  /*padding-left: 10px;*/
+}
+
+#whapow-banana.hover .whapow-product-description {
+  /*padding-left: 20px;*/
+}
+
+
+#whapow-banana.hover .whapow-product-title {
+  /*padding-left: 20px;*/
+}
+
+
+#whapow-passion {
+  text-align: right;
+}
+
+#whapow-passion .whapow-product-title {
+  text-align: right;
+}
+
+#whapow-passion.hover .whapow-product-title {
+  /*padding-right: 20px;*/
+}
+
+#whapow-passion .whapow-content-row {
+  padding-right: 3%;
+}
+
+#whapow-passion .whapow-product-description ul li {
+  /*margin-left: 10%;*/
+  text-align: right;
+}
+
+#whapow-passion .whapow-product-description  {
+  padding-right: 10px;
+
+}
+
+#whapow-passion .whapow-product-title {
+}
