@@ -40,61 +40,154 @@ get_header( 'shop' ); ?>
 		$p2 = get_product_by_sku("whapow_banana");
 	?>
 
-	<div class="whapow-product-row">
-		<div id="whapow-passion" class="whapow-product">
-				<div class="whapow-content-row">
-					<h2 class="whapow-product-title"><?php echo $p1->get_title(); ?></h2>
-					<div class="whapow-product-description"><?php echo $p1->get_short_description(); ?></div>
-					<a href="<?php echo $p1->get_permalink(); ?>" class="whapow-cta">mehr erfahren</a>
-				</div>
-				<div class="whapow-image-row">
-					<a href="<?php echo $p1->get_permalink(); ?>">
-						<?php echo $p1->get_image(array(0,700), array( 'class' => 'whapow-product-image' )); ?>
-					</a>
-					<div class="whapow-image-background"></div>
+	<div class="w-content-box" id="w-product-overview"></div>
 
+	<div class="w-content-box" id="w-product-banana"></div>
+
+	<div class="w-content-box" id="w-product-passion"></div>
+
+	<div class="w-content-box" id="w-product-purchase">
+
+		<!-- Selector -->
+		<h4><span>Wie viel Whapow möchtest du haben?</span></h4>
+		<div class="w-box-size-wrapper">
+			<!-- 12 -->
+			<div class="w-box-size-selector">
+				<div class="w-box-size">
+					<span class="w-size">12</span>
+					<span class="w-size-label">Whapow</span>
 				</div>
+				<span class="w-price">
+					35,88€
+				</span>
+				<span class="w-price-meta">
+					+ 4,40€ Versand
+				</span>
+				<input class="w-button" type="button" value="Grösse wählen" data-size="12" onclick="updateButton(this)" />
+			</div>
+
+			<!-- 24 -->
+			<div class="w-box-size-selector">
+				<div class="w-box-size">
+					<span class="w-size">24</span>
+					<span class="w-size-label">Whapow</span>
+				</div>
+				<span class="w-price">
+					71,23€
+				</span>
+				<span class="w-price-meta">
+					versandkostenfrei
+				</span>
+				<input class="w-button" type="button" value="Grösse wählen" data-size="24" onclick="updateButton(this)" />
+			</div>
+
+			<!-- 36 -->
+			<div class="w-box-size-selector">
+				<div class="w-box-size">
+					<span class="w-size">36</span>
+					<span class="w-size-label">Whapow</span>
+				</div>
+				<span class="w-price">
+					100,88€
+				</span>
+				<span class="w-price-meta">
+					versandkostenfrei
+				</span>
+				<input class="w-button" type="button" value="Grösse wählen" data-size="36" onclick="updateButton(this)" />
+			</div>
 		</div>
-	</div>
 
-	<div class="whapow-product-row">
-		<div id="whapow-banana" class="whapow-product">
+		<!-- Slider -->
+		<h4><span>Welche Verteilung möchtest du haben?</span></h4>
 
-				<div class="whapow-image-row">
-					<a href="<?php echo $p2->get_permalink(); ?>">
-						<?php echo $p2->get_image(array(0,700), array( 'class' => 'whapow-product-image' )); ?>
-					</a>
-					<div class="whapow-image-background"></div>
-				</div>
-				<div class="whapow-content-row">
-					<h2 class="whapow-product-title"><?php echo $p2->get_title(); ?></h2>
-					<div class="whapow-product-description"><?php echo $p2->get_short_description(); ?></div>
-					<a href="<?php echo $p2->get_permalink(); ?>" class="whapow-cta">mehr erfahren</a>
+		<svg id="box" class="w-box" data-size="36" data-dist="20" transform="">
+			<g transform="translate(2,0),scale(0.75)">
+			<g transform="translate(25, 20)">
+				<circle class="w-icon" cx="143.5" cy="360.5" r="14.5"></circle>
+				<circle class="w-icon" cx="100.5" cy="360.5" r="14.5"></circle>
+				<circle class="w-icon" cx="57.5" cy="360.5" r="14.5"></circle>
+				<circle class="w-icon" cx="14.5" cy="360.5" r="14.5"></circle>
+				<circle class="w-icon" cx="143.5" cy="317.5" r="14.5"></circle>
+				<circle class="w-icon" cx="100.5" cy="317.5" r="14.5"></circle>
+				<circle class="w-icon" cx="57.5" cy="317.5" r="14.5"></circle>
+				<circle class="w-icon" cx="14.5" cy="317.5" r="14.5"></circle>
+				<circle class="w-icon" cx="143.5" cy="274.5" r="14.5"></circle>
+				<circle class="w-icon" cx="100.5" cy="274.5" r="14.5"></circle>
+				<circle class="w-icon" cx="57.5" cy="274.5" r="14.5"></circle>
+				<circle class="w-icon" cx="14.5" cy="274.5" r="14.5"></circle>
+				<circle class="w-icon" cx="143.5" cy="230.5" r="14.5"></circle>
+				<circle class="w-icon" cx="100.5" cy="230.5" r="14.5"></circle>
+				<circle class="w-icon" cx="57.5" cy="230.5" r="14.5"></circle>
+				<circle class="w-icon" cx="14.5" cy="230.5" r="14.5"></circle>
+				<circle class="w-icon" cx="143.5" cy="187.5" r="14.5"></circle>
+				<circle class="w-icon" cx="100.5" cy="187.5" r="14.5"></circle>
+				<circle class="w-icon" cx="57.5" cy="187.5" r="14.5"></circle>
+				<circle class="w-icon" cx="14.5" cy="187.5" r="14.5"></circle>
+				<circle class="w-icon" cx="143.5" cy="144.5" r="14.5"></circle>
+				<circle class="w-icon" cx="100.5" cy="144.5" r="14.5"></circle>
+				<circle class="w-icon" cx="57.5" cy="144.5" r="14.5"></circle>
+				<circle class="w-icon" cx="14.5" cy="144.5" r="14.5"></circle>
+				<circle class="w-icon" cx="143.5" cy="100.5" r="14.5"></circle>
+				<circle class="w-icon" cx="100.5" cy="100.5" r="14.5"></circle>
+				<circle class="w-icon" cx="57.5" cy="100.5" r="14.5"></circle>
+				<circle class="w-icon" cx="14.5" cy="100.5" r="14.5"></circle>
+				<circle class="w-icon" cx="143.5" cy="57.5" r="14.5"></circle>
+				<circle class="w-icon" cx="100.5" cy="57.5" r="14.5"></circle>
+				<circle class="w-icon" cx="57.5" cy="57.5" r="14.5"></circle>
+				<circle class="w-icon" cx="14.5" cy="57.5" r="14.5"></circle>
+				<circle class="w-icon" cx="143.5" cy="14.5" r="14.5"></circle>
+				<circle class="w-icon" cx="100.5" cy="14.5" r="14.5"></circle>
+				<circle class="w-icon" cx="57.5" cy="14.5" r="14.5"></circle>
+				<circle class="w-icon" cx="14.5" cy="14.5" r="14.5"></circle>
+		</g>
+		<polyline class="w-box-outline-36" stroke="#000000" stroke-width="2" fill="none" points="0 8.50008716 7.66612653 408.831334 194.782001 410.069532 201.507871 8.50008716 234.519462 0.268445839 225.951893 385.927193 194.782001 410.069532"></polyline>
+		<polyline class="w-box-outline-24" stroke="#000000" stroke-width="2" fill="none" points="0 8.92813352 7.66612653 278.236579 194.782001 279.069532 201.507871 8.92813352 234.519462 0.627168504 225.951893 255.556511 194.782001 279.069532"></polyline>
+		<polyline class="w-box-outline-12" stroke="#000000" stroke-width="2" fill="none" points="0 8.90533166 7.66612653 149.634267 194.782001 150.069532 201.507871 8.90533166 234.519462 0.38715302 225.951893 125.763841 194.782001 150.069532"></polyline>
+	</g>
 
-				</div>
+		</svg>
+
+
+		<div class="w-slider-wrapper">
+			<span class="w-slider-label w-slider-label-left"><span data-dist-value-banana>6x</span> Banane + Rohkakao</span>
+			<div  class="w-slider"><input id="slider" type="range" step="1" onInput="updateSlider(this.value)" value="50" /></div>
+			<span class="w-slider-label w-slider-label-right"><span data-dist-value-passion>6x</span> Passionsfrucht + Mango</span>
+
 		</div>
+
+		<script>
+			function updateSlider(value) {
+				var slider = document.querySelector("#slider");
+				if(value == undefined) {
+					value = slider.value;
+					console.log(value);
+				}
+
+
+				var box = document.querySelector("#box");
+				var labelBanana = document.querySelector("span[data-dist-value-banana]");
+				var labelPassion = document.querySelector("span[data-dist-value-passion]");
+				var boxSize = box.getAttribute("data-size");
+
+				var newValue = Math.round( boxSize * (value / 100) * 0.5) / 0.5;
+
+				labelBanana.innerHTML = (boxSize - newValue) + "x";
+				labelPassion.innerHTML = newValue + "x";
+
+				box.setAttribute("data-dist", newValue);
+
+			}
+
+			function updateButton(elem) {
+				var newSize = elem.getAttribute("data-size");
+				var box = document.querySelector("#box");
+
+				box.setAttribute("data-size", newSize);
+				updateSlider();
+			}
+		</script>
+
 	</div>
-
-	<script>
-		jQuery("#whapow-banana .whapow-cta").hover(function() {
-			console.log("jeah");
-			jQuery("#whapow-banana").addClass("hover");
-			jQuery(".home").css("background-color", "rgb(255,224,0)").css("background-position", "48% 0%");;
-		}, function() {
-			jQuery("#whapow-banana").removeClass("hover");
-			jQuery(".home").css("background-color", "rgb(235,235,235)").css("background-position", "50% 0%");;
-		});
-
-		jQuery("#whapow-passion .whapow-cta").hover(function() {
-			console.log("jeah");
-			jQuery("#whapow-passion").addClass("hover");
-			jQuery(".home").css("background-color", "rgb(255,0,224)").css("background-position", "52% 0%");
-		}, function() {
-			jQuery("#whapow-passion").removeClass("hover");
-			jQuery(".home").css("background-color", "rgb(235,235,235)").css("background-position", "50% 0%");;
-
-		});
-	</script>
 
 
 	<?php

@@ -67,7 +67,7 @@ function my_custom_product_template($template, $slug, $name) {
 }
 
 function variable_slider() {
-  
+
 }
 
 add_filter('wc_get_template_part', 'my_custom_product_template', 10, 3);
