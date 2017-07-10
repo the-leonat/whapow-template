@@ -99,6 +99,7 @@ get_header( 'shop' ); ?>
 
 		<!-- Slider -->
 		<h4><span>Welche Verteilung möchtest du haben?</span></h4>
+		<div class="bg">
 
 		<svg id="box" class="w-box" data-size="36" data-dist="20" transform="">
 			<g transform="translate(2,0),scale(0.75)">
@@ -146,7 +147,7 @@ get_header( 'shop' ); ?>
 	</g>
 
 		</svg>
-
+</div>
 
 		<div class="w-slider-wrapper">
 			<span class="w-slider-label w-slider-label-left"><span data-dist-value-banana>6x</span> Banane + Rohkakao</span>
