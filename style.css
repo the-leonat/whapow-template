@@ -45,6 +45,7 @@ input[type="button"] {
 
 input[type="button"]:hover {
   border-color: rgb(0,163,226);
+  color: rgb(0,163,226);
 }
 
 
@@ -71,7 +72,13 @@ input[type="button"]:hover {
   text-decoration: underline;
 }
 
-/* Product Page */
+/* WHAPOW SORT PREVIEW ======================================================================================= */
+
+.w-type-wrapper {
+  
+}
+
+/* WHAPOW BOX PURCHASE ======================================================================================= */
 
 h4 {
   text-align: center;
@@ -95,6 +102,12 @@ h4 span {
 
 /*SELECT*/
 
+#w-product-purchase {
+  /*padding: 40px;
+  position: relative;
+  border: 1px solid black;*/
+}
+
 .w-box-size-wrapper {
   float: left;
   width: 100%;
@@ -106,7 +119,49 @@ h4 span {
   margin-right: 150px;
   float: left;
   text-align: center;
+  position: relative;
+
 }
+
+
+.w-box-size-selector::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 0%;
+  width: 100%;
+  height: 110%;
+  border: 2px dashed rgb(100,100,100) ;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity linear 0.2s;
+  /*background: rgba(0,0,0,0.2);*/
+}
+
+.w-box-size-selector[data-active]::before {
+  opacity: 1;
+}
+
+.w-box-size-selector[data-active] .w-box-size {
+  background-image: linear-gradient(-180deg, rgba(0,163,226,0.33) 0%, rgba(255,187,255,0.66) 100%);
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.1) ;
+}
+
+.w-box-size-selector[data-active] .w-button {
+  display: none;
+  background-color: rgba(0,163,226,0.33) !important;
+  /*color: rgb(255,255,255) !important;*/
+  box-shadow: 0px 0px 50px rgba(0,0,0,0.2);
+}
+
+.w-box-size-selector[data-active] .w-selected {
+  display: inline-block;
+}
+
+.w-box-size-selector[data-active] .w-box-size:hover {
+  cursor: auto;
+}
+
 
 .w-box-size-selector:last-child {
   margin-right: 0px;
@@ -121,7 +176,7 @@ h4 span {
   height: 190px;
   border-radius: 50%;
 
-  background-image: linear-gradient(-180deg, rgba(0,163,226,0.33) 0%, rgba(255,187,255,0.33) 100%);
+  background: linear-gradient(-180deg, rgba(0,163,226,0.33) 0%, rgba(255,187,255,0.33) 100%);
   border: 2px solid black;
   display:flex;
   align-items: center; /* Vertical center alignment */
@@ -130,6 +185,11 @@ h4 span {
 
   margin-bottom: 15px;
 }
+
+.w-box-size:hover {
+  cursor: pointer;
+}
+
 
 .w-box-size span {
 }
@@ -167,6 +227,16 @@ h4 span {
 .w-button:hover ~ .w-box-size {
 }
 
+.w-button {
+  margin-bottom: 10px;
+}
+
+.w-selected {
+  display: none;
+  font-size: 26px;
+  /*font-weight: bold;*/
+  padding: 8px 35px 8px 35px;
+}
 /*SLIDER*/
 /*BOX SIZE*/
 

@@ -35,6 +35,11 @@ function get_product_by_sku(string $sku) {
   return wc_get_product($id);
 }
 
+function get_variable_product_by_sku(string $sku) {
+  $id = wc_get_product_id_by_sku($sku);
+  return new WC_Product_Variable($id);
+}
+
 
 
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
@@ -66,12 +71,41 @@ function my_custom_product_template($template, $slug, $name) {
     return $template;
 }
 
-function variable_slider() {
-
-}
-
 add_filter('wc_get_template_part', 'my_custom_product_template', 10, 3);
 
+
+function json_get_variations($product) {
+  $variations = $product->get_variation_attributes();
+  return json_encode(reset($variations));
+}
+
+function json_get_variations_by_sku($sku) {
+  $p1 = new WC_Product_Variable(wc_get_product_id_by_sku($sku));
+  $variations = $p1->get_variation_attributes();
+  return json_encode(reset($variations));
+}
+
+function js_set_variation_constant($product_array) {
+  $variations_list = array();
+  foreach ($product_array as $key => $product) {
+    $variations = $product->get_variation_attributes();
+    $variations = reset($variations);
+    $variations_list[$product->get_id()] = $variations;
+  }
+
+  $jsonString = json_encode($variations_list);
+  echo "<script>";
+  echo "var VARIATIONS = " . $jsonString . ";";
+  echo "</script>";
+}
+
+function js_set_pagestate() {
+  global $product;
+
+  echo "<script>";
+  echo "initPageState('".$product->get_sku()."','"."s"."');";
+  echo "</script>";
+}
 
 
 ?>
