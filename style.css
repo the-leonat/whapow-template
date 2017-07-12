@@ -14,39 +14,64 @@
 
 
 @font-face {
-  font-family: "MTT Milano Medium";
+  font-family: "MTT Milano";
   src: url("fonts/medium.otf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MTT Milano Black";
+  font-family: "MTT Milano";
   src: url("fonts/black.otf");
   font-weight: bold;
   font-style: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'MTT Milano Black', sans-serif;
+  font-weight: bold;
 }
 
 body, button, input, textarea {
-  font-family: 'MTT Milano Medium', sans-serif;
+  font-family: 'MTT Milano', sans-serif;
   color: black;
   font-size: 20px;
 }
 
-input[type="button"] {
-  border: 2px solid black;
-  background-color: transparent !important;
+input[type="button"], input[type="submit"] {
+  border: 2px dashed rgb(100,100,100);
+  background-color: white !important;
   padding: 8px 35px;
+  letter-spacing: 1px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.1) ;
+
 }
 
-input[type="button"]:hover {
-  border-color: rgb(0,163,226);
-  color: rgb(0,163,226);
+input[type="button"]:hover, input[type="submit"]:hover {
+  /*color: rgb(0,163,226);*/
+  border: 2px solid black;
+  box-shadow: none;
+
 }
+
+p ~ a {
+  color: black;
+  /*text-decoration: underline;*/
+  border-bottom: 1px dashed black;
+}
+
+p ~ a:hover {
+  border-bottom: 1px solid black;
+}
+/*
+p + a::before {
+  content: '>';
+  padding-right: 2px;
+}
+
+p + a::after {
+  content: '<';
+  padding-left: 2px;
+}*/
 
 
 /* WHOOCOMMERCE OVERWRITES */
@@ -74,10 +99,113 @@ input[type="button"]:hover {
 
 /* WHAPOW SORT PREVIEW ======================================================================================= */
 
-.w-type-wrapper {
-  
+.w-product-wrapper {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+  float: left;
+  width: 100%;
+  /*background-image: url("images/test4.png");*/
 }
 
+#w-product-banana .w-product-wrapper {
+  background: url("images/test4.png") repeat round 10% 0, linear-gradient(to top left,rgba(255,224,0, 0.1),rgba(224,0,255, 0.1)) rgba(255, 224,0,0.33);
+
+}
+
+#w-product-passion .w-product-wrapper {
+  background: url("images/test4.png") repeat round 10% 0, linear-gradient(to top left,rgba(255,224,0, 0.1),rgba(224,0,255, 0.1)) rgba(224,0,255, 0.15);
+}
+
+
+.w-product-row {
+  float: left;
+  margin-right: 50px;
+}
+
+.w-product-row:last-child {
+  margin-right: 0px;
+}
+
+.w-product-content-wrapper-left {
+  width: calc(30% - (50px * 2 / 3));
+}
+
+.w-product-content-wrapper-right {
+  width: calc(40% - (50px * 2 / 3));
+}
+
+.w-product-content-wrapper:first-child {
+  text-align: right;
+}
+
+.w-product-summary {
+  /*color: rgb(70,70,70);*/
+  /*font-size: 18px;*/
+  /*padding-top: 91px;*/
+}
+
+.w-product-summary p {
+  padding-right: 20%;
+}
+
+.w-product-title {
+  min-height: 130px;
+  margin-bottom: 40px;
+  margin-top: -20px;
+
+
+}
+
+.w-product-summary h3 {
+  min-height: 130px;
+  margin-bottom: 40px;
+  margin-top: -20px;
+}
+
+.w-product-image-wrapper {
+  position: relative;
+  width: calc(30% - (50px * 2 / 3));
+}
+
+.w-product-image {
+  width: 130%;
+  max-width: 140% !important;
+  display: block;
+  margin: -25% 0 0 -15% !important;
+}
+
+.w-product-ingredients ul {
+  /*border: 5px solid rgba(255,224,0, 1);*/
+  border: 2px solid black;
+  display: inline-block;
+  text-align: left;
+  /*background: white;*/
+  margin: 0px;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.w-product-ingredients li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  font-size: 24px;
+  line-height: 1.5em;
+  /*font-weight: bold;*/
+  /*letter-spacing: 1px;*/
+
+}
+
+.w-product-ingredients li::before {
+  content: "+";
+  background: white;
+  /*font-size: 40px;*/
+  position: absolute;
+  left: -8px;
+  /*font-weight: bold;*/
+  padding-right: 5px;
+}
 /* WHAPOW BOX PURCHASE ======================================================================================= */
 
 h4 {
@@ -96,16 +224,17 @@ h4 span {
 
 }
 
-.content-box {
-
+.w-content-box {
+  float: left;
+  width: 100%;
 }
 
 /*SELECT*/
 
 #w-product-purchase {
-  /*padding: 40px;
+  padding: 40px;
   position: relative;
-  border: 1px solid black;*/
+  border: 1px dashed rgb(200,200,200);
 }
 
 .w-box-size-wrapper {
@@ -233,7 +362,8 @@ h4 span {
 
 .w-selected {
   display: none;
-  font-size: 26px;
+  /*font-size: 26px;*/
+  font-weight: bold;
   /*font-weight: bold;*/
   padding: 8px 35px 8px 35px;
 }

@@ -23,6 +23,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 	<?php
+		$p1 = get_variable_product_by_sku("whapow_banana");
+		$p2 = get_variable_product_by_sku("whapow_passion");
+
 		$p12 = get_variable_product_by_sku("whapow_box_12");
 		$p24 = get_variable_product_by_sku("whapow_box_24");
 		$p36 = get_variable_product_by_sku("whapow_box_36");
@@ -32,11 +35,41 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="w-content-box" id="w-product-overview"></div>
 
-	<div class="w-content-box" id="w-product-banana"></div>
+	<div class="w-content-box" id="w-product-banana">
+		<div class="w-product-wrapper">
+			<div class="w-product-row w-product-content-wrapper w-product-content-wrapper-left">
+				<h1 class="w-product-title"><?php echo $p1->get_title(); ?></h1>
+				<ul class="w-product-ingredients">
+						<?php echo $p1->get_short_description(); ?>
+				</ul>
+			</div>
+			<div class="w-product-row w-product-image-wrapper">
+				<?php echo $p1->get_image(array(0,700), array( 'class' => 'w-product-image' )); ?>
+			</div>
+			<div class="w-product-row w-product-content-wrapper w-product-content-wrapper-right">
+				<div class="w-product-summary">
+					<?php echo $p1->get_description(); ?>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="w-content-box" id="w-product-passion">
-		<div class="w-type-wrapper">
-			
+		<div class="w-product-wrapper">
+			<div class="w-product-row w-product-content-wrapper w-product-content-wrapper-left">
+				<h1 class="w-product-title"><?php echo $p2->get_title(); ?></h1>
+				<ul class="w-product-ingredients">
+						<?php echo $p2->get_short_description(); ?>
+				</ul>
+			</div>
+			<div class="w-product-row w-product-image-wrapper">
+				<?php echo $p2->get_image(array(0,700), array( 'class' => 'w-product-image' )); ?>
+			</div>
+			<div class="w-product-row w-product-content-wrapper w-product-content-wrapper-right">
+				<div class="w-product-summary">
+					<?php echo $p2->get_description(); ?>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -57,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span class="w-price-meta">
 					+ 4,40€ Versand
 				</span>
-				<input class="w-button" type="button" value="Grösse wählen" onclick="updateButton(this)" />
+				<input class="w-button" type="button" value="Ich mag 12!" onclick="updateButton(this)" />
 				<span class="w-selected" data-personalize-items="klein aber fein!|klasse!|ausgewählt!">ausgewählt</span>
 			</div>
 
@@ -73,7 +106,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span class="w-price-meta">
 					versandkostenfrei
 				</span>
-				<input class="w-button" type="button" value="Grösse wählen" onclick="updateButton(this)" />
+				<input class="w-button" type="button" value="Gib mir 24!" onclick="updateButton(this)" />
 				<span class="w-selected" data-personalize-items="super.|klasse!|alles klar :)|ausgewählt!">alles klar!</span>
 			</div>
 
@@ -89,7 +122,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span class="w-price-meta">
 					versandkostenfrei
 				</span>
-				<input class="w-button" type="button" value="Grösse wählen" onclick="updateButton(this)" />
+				<input class="w-button" type="button" value="Her die 36!" onclick="updateButton(this)" />
 				<span class="w-selected" data-personalize-items="Großartig.|Big Time!|Die Volle Dröhnung!|ausgewählt!">ausgewählt</span>
 
 			</div>
@@ -152,7 +185,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="w-buy-wrapper">
 			<form id="w-buy-form" method="post" enctype='multipart/form-data'>
-			<button type="submit" class="single_add_to_cart_button button alt" onclick="buy(event)">In den Warenkorb</button>
+			<input type="submit" class="w-button" onclick="buy(event)" value="in den Warenkorb"/>
 			<input type="hidden" name="add-to-cart" value="77" />
 			<input type="hidden" name="product_id" value="77" />
 			<input type="hidden" name="variation_id" class="variation_id" value="0" />
