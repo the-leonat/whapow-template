@@ -76,14 +76,55 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="w-content-box" id="w-product-purchase">
 
 		<!-- Selector -->
-		<h4><span>Wie viel Whapow möchtest du haben?</span></h4>
+		<h4><span>Welche Box ist deine?</span></h4>
 		<div class="w-box-size-wrapper">
 			<!-- 12 -->
 			<div class="w-box-size-selector" data-personalize data-id="<?php echo $p12->get_id() ?>" data-size="12">
-				<div class="w-box-size" onclick="updateButton(this)">
-					<span class="w-size">12</span>
-					<span class="w-size-label">Whapow</span>
-				</div>
+				<svg id="box" class="w-box" data-size="12" data-dist="20" transform="">
+					<g transform="translate(2,0),scale(0.75)">
+						<g transform="translate(25, 20)">
+							<circle class="w-icon" cx="143.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="14.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="14.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="14.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="14.5" r="14.5"></circle>
+						</g>
+						<polyline class="w-box-outline-36" stroke="#000000" stroke-width="2" fill="none" points="0 8.50008716 7.66612653 408.831334 194.782001 410.069532 201.507871 8.50008716 234.519462 0.268445839 225.951893 385.927193 194.782001 410.069532"></polyline>
+						<polyline class="w-box-outline-24" stroke="#000000" stroke-width="2" fill="none" points="0 8.92813352 7.66612653 278.236579 194.782001 279.069532 201.507871 8.92813352 234.519462 0.627168504 225.951893 255.556511 194.782001 279.069532"></polyline>
+						<polyline class="w-box-outline-12" stroke="#000000" stroke-width="2" fill="none" points="0 8.90533166 7.66612653 149.634267 194.782001 150.069532 201.507871 8.90533166 234.519462 0.38715302 225.951893 125.763841 194.782001 150.069532"></polyline>
+					</g>
+				</svg>
 				<span class="w-price">
 					<?php echo $p12->get_variation_regular_price(); ?>€
 				</span>
@@ -96,10 +137,51 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<!-- 24 -->
 			<div class="w-box-size-selector" data-personalize data-id="<?php echo $p24->get_id() ?>" data-size="24" >
-				<div class="w-box-size" onclick="updateButton(this)">
-					<span class="w-size">24</span>
-					<span class="w-size-label">Whapow</span>
-				</div>
+				<svg id="box" class="w-box" data-size="24" data-dist="20" transform="">
+					<g transform="translate(2,0),scale(0.75)">
+						<g transform="translate(25, 20)">
+							<circle class="w-icon" cx="143.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="14.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="14.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="14.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="14.5" r="14.5"></circle>
+						</g>
+						<polyline class="w-box-outline-36" stroke="#000000" stroke-width="2" fill="none" points="0 8.50008716 7.66612653 408.831334 194.782001 410.069532 201.507871 8.50008716 234.519462 0.268445839 225.951893 385.927193 194.782001 410.069532"></polyline>
+						<polyline class="w-box-outline-24" stroke="#000000" stroke-width="2" fill="none" points="0 8.92813352 7.66612653 278.236579 194.782001 279.069532 201.507871 8.92813352 234.519462 0.627168504 225.951893 255.556511 194.782001 279.069532"></polyline>
+						<polyline class="w-box-outline-12" stroke="#000000" stroke-width="2" fill="none" points="0 8.90533166 7.66612653 149.634267 194.782001 150.069532 201.507871 8.90533166 234.519462 0.38715302 225.951893 125.763841 194.782001 150.069532"></polyline>
+					</g>
+				</svg>
 				<span class="w-price">
 					<?php echo $p24->get_variation_regular_price(); ?>€
 				</span>
@@ -112,10 +194,51 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<!-- 36 -->
 			<div class="w-box-size-selector" data-personalize data-id="<?php echo $p36->get_id() ?>" data-size="36" >
-				<div class="w-box-size" onclick="updateButton(this)">
-					<span class="w-size">36</span>
-					<span class="w-size-label">Whapow</span>
-				</div>
+				<svg id="box" class="w-box" data-size="36" data-dist="20" transform="">
+					<g transform="translate(2,0),scale(0.75)">
+						<g transform="translate(25, 20)">
+							<circle class="w-icon" cx="143.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="360.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="317.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="274.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="230.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="187.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="144.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="100.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="57.5" r="14.5"></circle>
+							<circle class="w-icon" cx="143.5" cy="14.5" r="14.5"></circle>
+							<circle class="w-icon" cx="100.5" cy="14.5" r="14.5"></circle>
+							<circle class="w-icon" cx="57.5" cy="14.5" r="14.5"></circle>
+							<circle class="w-icon" cx="14.5" cy="14.5" r="14.5"></circle>
+						</g>
+						<polyline class="w-box-outline-36" stroke="#000000" stroke-width="2" fill="none" points="0 8.50008716 7.66612653 408.831334 194.782001 410.069532 201.507871 8.50008716 234.519462 0.268445839 225.951893 385.927193 194.782001 410.069532"></polyline>
+						<polyline class="w-box-outline-24" stroke="#000000" stroke-width="2" fill="none" points="0 8.92813352 7.66612653 278.236579 194.782001 279.069532 201.507871 8.92813352 234.519462 0.627168504 225.951893 255.556511 194.782001 279.069532"></polyline>
+						<polyline class="w-box-outline-12" stroke="#000000" stroke-width="2" fill="none" points="0 8.90533166 7.66612653 149.634267 194.782001 150.069532 201.507871 8.90533166 234.519462 0.38715302 225.951893 125.763841 194.782001 150.069532"></polyline>
+					</g>
+				</svg>
 				<span class="w-price">
 					<?php echo $p36->get_variation_regular_price(); ?>€
 				</span>
@@ -130,52 +253,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<!-- Slider -->
 		<h4><span>Welche Verteilung möchtest du haben?</span></h4>
-
-		<svg id="box" class="w-box" data-size="36" data-dist="20" transform="">
-			<g transform="translate(2,0),scale(0.75)">
-				<g transform="translate(25, 20)">
-					<circle class="w-icon" cx="143.5" cy="360.5" r="14.5"></circle>
-					<circle class="w-icon" cx="100.5" cy="360.5" r="14.5"></circle>
-					<circle class="w-icon" cx="57.5" cy="360.5" r="14.5"></circle>
-					<circle class="w-icon" cx="14.5" cy="360.5" r="14.5"></circle>
-					<circle class="w-icon" cx="143.5" cy="317.5" r="14.5"></circle>
-					<circle class="w-icon" cx="100.5" cy="317.5" r="14.5"></circle>
-					<circle class="w-icon" cx="57.5" cy="317.5" r="14.5"></circle>
-					<circle class="w-icon" cx="14.5" cy="317.5" r="14.5"></circle>
-					<circle class="w-icon" cx="143.5" cy="274.5" r="14.5"></circle>
-					<circle class="w-icon" cx="100.5" cy="274.5" r="14.5"></circle>
-					<circle class="w-icon" cx="57.5" cy="274.5" r="14.5"></circle>
-					<circle class="w-icon" cx="14.5" cy="274.5" r="14.5"></circle>
-					<circle class="w-icon" cx="143.5" cy="230.5" r="14.5"></circle>
-					<circle class="w-icon" cx="100.5" cy="230.5" r="14.5"></circle>
-					<circle class="w-icon" cx="57.5" cy="230.5" r="14.5"></circle>
-					<circle class="w-icon" cx="14.5" cy="230.5" r="14.5"></circle>
-					<circle class="w-icon" cx="143.5" cy="187.5" r="14.5"></circle>
-					<circle class="w-icon" cx="100.5" cy="187.5" r="14.5"></circle>
-					<circle class="w-icon" cx="57.5" cy="187.5" r="14.5"></circle>
-					<circle class="w-icon" cx="14.5" cy="187.5" r="14.5"></circle>
-					<circle class="w-icon" cx="143.5" cy="144.5" r="14.5"></circle>
-					<circle class="w-icon" cx="100.5" cy="144.5" r="14.5"></circle>
-					<circle class="w-icon" cx="57.5" cy="144.5" r="14.5"></circle>
-					<circle class="w-icon" cx="14.5" cy="144.5" r="14.5"></circle>
-					<circle class="w-icon" cx="143.5" cy="100.5" r="14.5"></circle>
-					<circle class="w-icon" cx="100.5" cy="100.5" r="14.5"></circle>
-					<circle class="w-icon" cx="57.5" cy="100.5" r="14.5"></circle>
-					<circle class="w-icon" cx="14.5" cy="100.5" r="14.5"></circle>
-					<circle class="w-icon" cx="143.5" cy="57.5" r="14.5"></circle>
-					<circle class="w-icon" cx="100.5" cy="57.5" r="14.5"></circle>
-					<circle class="w-icon" cx="57.5" cy="57.5" r="14.5"></circle>
-					<circle class="w-icon" cx="14.5" cy="57.5" r="14.5"></circle>
-					<circle class="w-icon" cx="143.5" cy="14.5" r="14.5"></circle>
-					<circle class="w-icon" cx="100.5" cy="14.5" r="14.5"></circle>
-					<circle class="w-icon" cx="57.5" cy="14.5" r="14.5"></circle>
-					<circle class="w-icon" cx="14.5" cy="14.5" r="14.5"></circle>
-				</g>
-				<polyline class="w-box-outline-36" stroke="#000000" stroke-width="2" fill="none" points="0 8.50008716 7.66612653 408.831334 194.782001 410.069532 201.507871 8.50008716 234.519462 0.268445839 225.951893 385.927193 194.782001 410.069532"></polyline>
-				<polyline class="w-box-outline-24" stroke="#000000" stroke-width="2" fill="none" points="0 8.92813352 7.66612653 278.236579 194.782001 279.069532 201.507871 8.92813352 234.519462 0.627168504 225.951893 255.556511 194.782001 279.069532"></polyline>
-				<polyline class="w-box-outline-12" stroke="#000000" stroke-width="2" fill="none" points="0 8.90533166 7.66612653 149.634267 194.782001 150.069532 201.507871 8.90533166 234.519462 0.38715302 225.951893 125.763841 194.782001 150.069532"></polyline>
-			</g>
-		</svg>
 
 		<div class="w-slider-wrapper">
 			<span class="w-slider-label w-slider-label-left"><span data-dist-value-banana>18x</span> Banane + Rohkakao</span>
@@ -235,9 +312,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 				if(!elem.parentNode.hasAttribute("data-active")) {
 					buttonList.forEach(function(x) {
 						x.removeAttribute("data-active");
+						x.setAttribute("data-inactive", "");
 					});
 
 					elem.parentNode.setAttribute("data-active","")
+					elem.parentNode.removeAttribute("data-inactive")
+
 
 					box.setAttribute("data-size", newSize);
 					updateSlider();
