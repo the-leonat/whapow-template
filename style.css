@@ -240,19 +240,21 @@ h4 span {
 .w-box-size-wrapper {
   float: left;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+  display: table-cell;
 }
 
 .w-box-size-selector {
   width: calc(33% - (150px * 2 / 3));
   margin-right: 150px;
-  float: left;
   text-align: center;
   position: relative;
+  vertical-align: bottom;
+  display: inline-block;
 }
 
 .w-box-size-selector:not([data-active]) .w-icon {
-  fill: rgb(220,220,220) !important;
+  fill: rgb(235,235,235) !important;
 }
 
 .w-box-size-wrapper *[data-active] {
@@ -280,10 +282,6 @@ h4 span {
 .w-box-size-selector[data-active] .w-box-size {
   background-image: linear-gradient(-180deg, rgba(0,163,226,0.33) 0%, rgba(255,187,255,0.66) 100%);
   box-shadow: 0px 0px 20px rgba(0,0,0,0.1) ;
-}
-
-.w-box-size-selector[data-inactive] .w-box {
-  /*opacity: 0;*/
 }
 
 .w-box-size-selector[data-active] .w-button {
@@ -366,16 +364,12 @@ h4 span {
 .w-button:hover ~ .w-box-size {
 }
 
-.w-button {
-  margin-bottom: 10px;
-}
-
 .w-selected {
   display: none;
   /*font-size: 26px;*/
   font-weight: bold;
   /*font-weight: bold;*/
-  padding: 8px 35px 8px 35px;
+  padding: 10px 35px 10px 35px;
 }
 /*SLIDER*/
 /*BOX SIZE*/
@@ -385,7 +379,27 @@ h4 span {
   width: 180px;
   margin: 0 auto;
   display: block;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  transition: margin 0.4s;
+}
+
+.w-box:hover {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.w-box-size-selector[data-active] .w-box {
   margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.w-box:hover {
+  cursor: pointer;
+}
+
+.w-box-size-selector[data-active] .w-box:hover {
+  cursor: auto;
 }
 
 .w-box[data-size="36"] {
@@ -500,6 +514,7 @@ h4 span {
   display: inline-block;
   float: left;
   width: 25%;
+  font-weight: bold;
   /*line-height: 40px;*/
 }
 

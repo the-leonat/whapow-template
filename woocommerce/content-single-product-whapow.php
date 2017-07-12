@@ -74,13 +74,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 
 	<div class="w-content-box" id="w-product-purchase">
-
+		<p>Unsere kleinste Kiste besteht aus 12 WHAPOWs, die gefroren geliefert werden. Das ist auch der Grund, warum wir leider nicht eins zum Probieren verschicken können.</p>
 		<!-- Selector -->
 		<h4><span>Welche Box ist deine?</span></h4>
+
 		<div class="w-box-size-wrapper">
 			<!-- 12 -->
 			<div class="w-box-size-selector" data-personalize data-id="<?php echo $p12->get_id() ?>" data-size="12">
-				<svg id="box" class="w-box" data-size="12" data-dist="20" transform="">
+				<svg id="box" class="w-box" data-size="12" data-dist="20" transform="" onclick="updateButton(this)">
 					<g transform="translate(2,0),scale(0.75)">
 						<g transform="translate(25, 20)">
 							<circle class="w-icon" cx="143.5" cy="360.5" r="14.5"></circle>
@@ -137,7 +138,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<!-- 24 -->
 			<div class="w-box-size-selector" data-personalize data-id="<?php echo $p24->get_id() ?>" data-size="24" >
-				<svg id="box" class="w-box" data-size="24" data-dist="20" transform="">
+				<svg id="box" class="w-box" data-size="24" data-dist="20" transform="" onclick="updateButton(this)">
 					<g transform="translate(2,0),scale(0.75)">
 						<g transform="translate(25, 20)">
 							<circle class="w-icon" cx="143.5" cy="360.5" r="14.5"></circle>
@@ -193,8 +194,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- 36 -->
-			<div class="w-box-size-selector" data-personalize data-id="<?php echo $p36->get_id() ?>" data-size="36" >
-				<svg id="box" class="w-box" data-size="36" data-dist="20" transform="">
+			<div class="w-box-size-selector" data-personalize data-id="<?php echo $p36->get_id() ?>" data-size="36">
+				<svg id="box" class="w-box" data-size="36" data-dist="20" transform="" onclick="updateButton(this)">
 					<g transform="translate(2,0),scale(0.75)">
 						<g transform="translate(25, 20)">
 							<circle class="w-icon" cx="143.5" cy="360.5" r="14.5"></circle>
