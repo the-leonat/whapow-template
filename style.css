@@ -39,7 +39,7 @@ body, button, input, textarea {
 
 input[type="button"], input[type="submit"] {
   border: 2px dashed rgb(100,100,100);
-  background-color: white !important;
+  background-color: rgb(255,255,255);
   padding: 8px 35px;
   letter-spacing: 1px;
   box-shadow: 0px 0px 20px rgba(0,0,0,0.1) ;
@@ -50,7 +50,7 @@ input[type="button"]:hover, input[type="submit"]:hover {
   /*color: rgb(0,163,226);*/
   border: 2px solid black;
   box-shadow: none;
-
+  background-color: rgb(255,255,255);
 }
 
 p ~ a {
@@ -229,12 +229,51 @@ h4 span {
   width: 100%;
 }
 
+.w-buy-button {
+  /*background-color: rgba(0,163,223,0.5) !important;*/
+  /*border-color: rgba(0,163,223,0.5) !important;*/
+}
+
+.w-buy-wrapper {
+  text-align: center;
+}
+
 /*SELECT*/
 
 #w-product-purchase {
   padding: 40px;
   position: relative;
   border: 1px dashed rgb(200,200,200);
+}
+
+
+#w-product-purchase:not([data-state="0"]) .w-box-size-selector:not([data-active]) {
+  color: rgb(100,100,100) !important;
+}
+
+.w-step-2 {
+  transition: opacity 1s, max-height 1s;
+  transition-delay: 0.5s;
+  float: left;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+#w-product-purchase[data-state="1"] .w-step-2 {
+
+}
+
+#w-product-purchase[data-state="2"] .w-step-2 {
+  max-height: 500px;
+  opacity: 1
+}
+
+.w-info-text {
+  padding: 0px 20%;
+  /*color: rgb(100,100,100);*/
+  font-size: 18px;
 }
 
 .w-box-size-wrapper {
@@ -251,6 +290,7 @@ h4 span {
   position: relative;
   vertical-align: bottom;
   display: inline-block;
+  transition: color 0.2s;
 }
 
 .w-box-size-selector:not([data-active]) .w-icon {
@@ -376,7 +416,8 @@ h4 span {
 
 .w-box {
   /*border: 1px solid black;*/
-  width: 180px;
+  max-width: 180px;
+  width: 100%;
   margin: 0 auto;
   display: block;
   margin-bottom: 10px;
@@ -501,6 +542,7 @@ h4 span {
   padding: 0px 50px;
   display: flex;
   align-items: center; /* Vertical center alignment */
+  margin-bottom: 30px;
 }
 
 .w-slider {

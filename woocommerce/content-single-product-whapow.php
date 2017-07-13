@@ -73,8 +73,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	</div>
 
-	<div class="w-content-box" id="w-product-purchase">
-		<p>Unsere kleinste Kiste besteht aus 12 WHAPOWs, die gefroren geliefert werden. Das ist auch der Grund, warum wir leider nicht eins zum Probieren verschicken können.</p>
+	<div class="w-content-box" id="w-product-purchase" data-state="0">
+		<p class="w-info-text">Unsere kleinste Kiste besteht aus 12 WHAPOWs, die gefroren geliefert werden. Das ist auch der Grund, warum wir leider nicht eins zum Probieren verschicken können.</p>
 		<!-- Selector -->
 		<h4><span>Welche Box ist deine?</span></h4>
 
@@ -132,7 +132,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span class="w-price-meta">
 					+ 4,40€ Versand
 				</span>
-				<input class="w-button" type="button" value="Ich mag 12!" onclick="updateButton(this)" />
+				<input class="w-button" type="button" value="12 Whapow" onclick="updateButton(this)" />
 				<span class="w-selected" data-personalize-items="klein aber fein!|klasse!|ausgewählt!">ausgewählt</span>
 			</div>
 
@@ -189,7 +189,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span class="w-price-meta">
 					versandkostenfrei
 				</span>
-				<input class="w-button" type="button" value="Gib mir 24!" onclick="updateButton(this)" />
+				<input class="w-button" type="button" value="24 Whapow" onclick="updateButton(this)" />
 				<span class="w-selected" data-personalize-items="super.|klasse!|alles klar :)|ausgewählt!">alles klar!</span>
 			</div>
 
@@ -246,35 +246,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span class="w-price-meta">
 					versandkostenfrei
 				</span>
-				<input class="w-button" type="button" value="Her die 36!" onclick="updateButton(this)" />
+				<input class="w-button" type="button" value="36 Whapow" onclick="updateButton(this)" />
 				<span class="w-selected" data-personalize-items="Großartig.|Big Time!|Die Volle Dröhnung!|ausgewählt!">ausgewählt</span>
 
 			</div>
 		</div>
 
-		<!-- Slider -->
-		<h4><span>Welche Verteilung möchtest du haben?</span></h4>
+		<div class="w-step-2">
+			<!-- Slider -->
+			<h4><span>Welche Verteilung möchtest du haben?</span></h4>
 
-		<div class="w-slider-wrapper">
-			<span class="w-slider-label w-slider-label-left"><span data-dist-value-banana>18x</span> Banane + Rohkakao</span>
-			<div  class="w-slider"><input id="slider" type="range" step="1" onInput="updateSlider(this.value)" value="50" /></div>
-			<span class="w-slider-label w-slider-label-right"><span data-dist-value-passion>18x</span> Passionsfrucht + Mango</span>
+			<div class="w-slider-wrapper">
+				<span class="w-slider-label w-slider-label-left"><span data-dist-value-banana>18x</span> Banane + Rohkakao</span>
+				<div  class="w-slider"><input id="slider" type="range" step="1" onInput="updateSlider(this.value)" value="50" /></div>
+				<span class="w-slider-label w-slider-label-right"><span data-dist-value-passion>18x</span> Passionsfrucht + Mango</span>
+			</div>
+
+			<div class="w-buy-wrapper">
+				<form id="w-buy-form" method="post" enctype='multipart/form-data'>
+				<input type="submit" class="w-button w-buy-button" onclick="buy(event)" value="in den Warenkorb"/>
+				<input type="hidden" name="add-to-cart" value="77" />
+				<input type="hidden" name="product_id" value="77" />
+				<input type="hidden" name="variation_id" class="variation_id" value="0" />
+				<input type="hidden" name="attribute_aufteilung"  value="1" />
+				</form>
+			</div>
+
 		</div>
-
-		<div class="w-buy-wrapper">
-			<form id="w-buy-form" method="post" enctype='multipart/form-data'>
-			<input type="submit" class="w-button" onclick="buy(event)" value="in den Warenkorb"/>
-			<input type="hidden" name="add-to-cart" value="77" />
-			<input type="hidden" name="product_id" value="77" />
-			<input type="hidden" name="variation_id" class="variation_id" value="0" />
-			<input type="hidden" name="attribute_aufteilung"  value="1" />
-			</form>
-		</div>
-
-
 		<script>
 			//sets VARIATIONS variable
 			var FORM = document.querySelector("#w-buy-form");
+			var CONTAINER = document.querySelector("#w-product-purchase");
 
 			function updateSlider(value) {
 				var slider = document.querySelector("#slider");
@@ -283,10 +285,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 				}
 
 
-				var box = document.querySelector("#box");
+				var boxSelected = document.querySelector(".w-box-size-selector[data-active]");
+				var boxList = document.querySelectorAll(".w-box");
 				var labelBanana = document.querySelector("span[data-dist-value-banana]");
 				var labelPassion = document.querySelector("span[data-dist-value-passion]");
-				var boxSize = box.getAttribute("data-size");
+
+				if(boxSelected == undefined) {
+					boxSelected = document.querySelector(".w-box");
+				}
+
+				var boxSize = boxSelected.getAttribute("data-size");
 
 				var newLabelValue = Math.round( boxSize * (value / 100) * 0.5) / 0.5;
 				var newFormValue =  parseInt(boxSize * 0.5 * (value / 100 - 0));
@@ -294,7 +302,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				labelBanana.innerHTML = (boxSize - newLabelValue) + "x";
 				labelPassion.innerHTML = newLabelValue + "x";
 
-				box.setAttribute("data-dist", newLabelValue);
+				boxList.forEach(function(box) {
+					box.setAttribute("data-dist", newLabelValue);
+				});
 
 				//update current dist on form
 				FORM.setAttribute("data-selected-dist", newFormValue);
@@ -304,7 +314,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			function updateButton(elem) {
 				var newSize = elem.parentNode.getAttribute("data-size");
 				var boxId = elem.parentNode.getAttribute("data-id");
-				var box = document.querySelector("#box");
+				var boxList = document.querySelectorAll(".w-box");
 				var buttonList = document.querySelectorAll(".w-box-size-selector");
 
 				//update current id on form
@@ -316,11 +326,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 						x.setAttribute("data-inactive", "");
 					});
 
-					elem.parentNode.setAttribute("data-active","")
-					elem.parentNode.removeAttribute("data-inactive")
+					elem.parentNode.setAttribute("data-active","");
+					elem.parentNode.removeAttribute("data-inactive");
+
+					CONTAINER.setAttribute("data-state", 2);
 
 
-					box.setAttribute("data-size", newSize);
+					// box.setAttribute("data-size", newSize);
 					updateSlider();
 				}
 			}
