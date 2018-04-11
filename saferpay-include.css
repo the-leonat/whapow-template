@@ -1,0 +1,65 @@
+
+@font-face {
+  font-family: "MTT Milano";
+  src: url("https://whapow.de/wp-content/themes/whapow/fonts/medium.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTT Milano";
+  src: url("https://whapow.de/wp-content/themes/whapow/fonts/black.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'MTT Milano', "Roboto","Helvetica","Arial",sans-serif;
+  color: black;
+  font-size: 16px;
+  /*background: url("https://whapow.de/wp-content/themes/whapow/images/email_tile.png") 5% 0;*/
+}
+
+.box-content {
+  max-width: 1000px !important;
+}
+
+.box-header {
+
+  margin-bottom: 20px !important;
+}
+
+.theme-six:before {
+  display: none;
+}
+
+.box .box-main {
+  border: 1px solid black !important;
+  box-shadow: none !important;
+  border-radius: 0px !important;
+}
+
+@media only screen and (min-width: 769px) {
+  .box .box-main {
+    padding: 3rem !important;
+  }
+}
+
+.btn {
+  border-radius: 0px !important;
+  color: black !important;
+
+}
+
+.btn-abort {
+}
+
+.btn-next {
+  border: 2px dashed black !important;
+  background-color: #fff !important;
+
+}
+
+.btn-next:hover {
+  border-style: solid !important;
+}
