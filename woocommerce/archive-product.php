@@ -10,56 +10,55 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ * @see         https://docs.woocommerce.com/document/template-structure/
+ * @author         WooThemes
+ * @package     WooCommerce/Templates
  * @version     2.0.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
 }
-get_header( 'landing' );
+get_header('landing');
 
-
- ?>
+?>
 
 <?php
-	/**
-	 * woocommerce_before_main_content hook.
-	 *
-	 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-	 * @hooked woocommerce_breadcrumb - 20
-	 * @hooked WC_Structured_Data::generate_website_data() - 30
-	 */
-	do_action( 'woocommerce_before_main_content' );
+/**
+ * woocommerce_before_main_content hook.
+ *
+ * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+ * @hooked woocommerce_breadcrumb - 20
+ * @hooked WC_Structured_Data::generate_website_data() - 30
+ */
+do_action('woocommerce_before_main_content');
 
-	$p1 = get_variable_product_by_sku("whapow_banana");
-	$p2 = get_variable_product_by_sku("whapow_passion");
+$p1 = get_variable_product_by_sku("whapow_banana");
+$p2 = get_variable_product_by_sku("whapow_passion");
 
-	$post = get_post(4);
-	$content = $post->post_content;
+$post = get_post(4);
+$content = $post->post_content;
 ?>
 
 <section class="w-landing w-content-box" id="w-product-overview">
-	<header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles(); ?>">
+	<header id="masthead" class="site-header" role="banner" style="<?php storefront_header_styles();?>">
 
 			<?php
-			/**
-			 * Functions hooked into storefront_header action
-			 *
-			 * @hooked storefront_skip_links                       - 0
-			 * @hooked storefront_social_icons                     - 10
-			 * @hooked storefront_site_branding                    - 20
-			 * @hooked storefront_secondary_navigation             - 30
-			 * @hooked storefront_product_search                   - 40
-			 * @hooked storefront_primary_navigation_wrapper       - 42
-			 * @hooked storefront_primary_navigation               - 50
-			 * @hooked storefront_header_cart                      - 60
-			 * @hooked storefront_primary_navigation_wrapper_close - 68
-			 */
-			remove_action('storefront_header', 'storefront_site_branding', 20);
-			do_action( 'storefront_header' ); ?>
+/**
+ * Functions hooked into storefront_header action
+ *
+ * @hooked storefront_skip_links                       - 0
+ * @hooked storefront_social_icons                     - 10
+ * @hooked storefront_site_branding                    - 20
+ * @hooked storefront_secondary_navigation             - 30
+ * @hooked storefront_product_search                   - 40
+ * @hooked storefront_primary_navigation_wrapper       - 42
+ * @hooked storefront_primary_navigation               - 50
+ * @hooked storefront_header_cart                      - 60
+ * @hooked storefront_primary_navigation_wrapper_close - 68
+ */
+remove_action('storefront_header', 'storefront_site_branding', 20);
+do_action('storefront_header');?>
 
 	</header><!-- #masthead -->
 
@@ -70,12 +69,12 @@ get_header( 'landing' );
 
 	<div class="w-overview-image-wrapper">
 		<div class="w-overview-image-box">
-			<div data-scroll-to="w-product-whapow_banana"><?php echo $p1->get_image(array(0,700), array( 'class' => 'w-overview-image' )); ?></div>
-			<a data-scroll-to="w-product-whapow_banana" href="#"><?php echo $p1->get_title();?></a>
+			<div data-scroll-to="w-product-whapow_banana"><?php echo $p1->get_image(array(0, 700), array('class' => 'w-overview-image')); ?></div>
+			<a data-scroll-to="w-product-whapow_banana" href="#"><?php echo $p1->get_title(); ?></a>
 		</div>
 		<div class="w-overview-image-box">
-			<div data-scroll-to="w-product-whapow_passion"><?php echo $p2->get_image(array(0,700), array( 'class' => 'w-overview-image' )); ?></div>
-			<a data-scroll-to="w-product-whapow_passion" href="#"><?php echo $p2->get_title();?></a>
+			<div data-scroll-to="w-product-whapow_passion"><?php echo $p2->get_image(array(0, 700), array('class' => 'w-overview-image')); ?></div>
+			<a data-scroll-to="w-product-whapow_passion" href="#"><?php echo $p2->get_title(); ?></a>
 		</div>
 	</div>
 
@@ -93,37 +92,36 @@ get_header( 'landing' );
 
 <?php echo do_shortcode('[product sku="whapow_box_12"]'); ?>
 
-<?php if ( is_active_sidebar( 'media-echo' ) ) : ?>
+<?php if (is_active_sidebar('media-echo')): ?>
+	<section id="w-media-echo" class="w-content-box">
+	<p>bekannt aus</p>
+	<!--<p>Whapow</p>-->
+	<?php dynamic_sidebar('media-echo');?>
+	</section>
+<?php endif;?>
 
-<section id="w-media-echo" class="w-content-box">
-<p>bekannt aus</p>
-<!--<p>Whapow</p>-->
-<?php dynamic_sidebar( 'media-echo' ); ?>
-</section>
-
-<section class="w-content-box">
-<?php dynamic_sidebar( 'pre-footer' ); ?>
-</section>
-
-
-<?php endif; ?>
+<?php if (is_active_sidebar('pre-footer')): ?>
+	<section class="w-content-box">
+	<?php dynamic_sidebar('pre-footer');?>
+	</section>
+<?php endif;?>
 
 <?php
-	/**
-	 * woocommerce_after_main_content hook.
-	 *
-	 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-	 */
-	do_action( 'woocommerce_after_main_content' );
+/**
+ * woocommerce_after_main_content hook.
+ *
+ * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+ */
+do_action('woocommerce_after_main_content');
 ?>
 
 <?php
-	/**
-	 * woocommerce_sidebar hook.
-	 *
-	 * @hooked woocommerce_get_sidebar - 10
-	 */
-	do_action( 'woocommerce_sidebar' );
+/**
+ * woocommerce_sidebar hook.
+ *
+ * @hooked woocommerce_get_sidebar - 10
+ */
+do_action('woocommerce_sidebar');
 ?>
 
-<?php get_footer( 'shop' ); ?>
+<?php get_footer('shop');?>

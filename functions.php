@@ -20,13 +20,15 @@ function my_theme_enqueue_styles()
         get_stylesheet_directory_uri() . '/js/script.js',
         array(),
         1.0,
-        true);
+        true
+    );
 
     wp_register_script('typedjs',
         'https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.6/typed.min.js',
         array('jquery'),
         1.0,
-        true);
+        true
+    );
 
     wp_enqueue_script('typedjs');
 
@@ -156,6 +158,8 @@ function js_set_pagestate()
 }
 
 //widget area
+
+add_filter( 'woocommerce_ship_to_different_address_checked', '__return_false' );
 
 function whapow_widgets_init()
 {
