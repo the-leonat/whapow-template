@@ -104,6 +104,9 @@
 </div>
 <?php do_action( 'wpo_wcpdf_after_customer_notes', $this->type, $this->order ); ?>
 
+<img class="w-seacon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/seacon-rechnung.svg" />
+
+
 <?php if ( $this->get_footer() ): ?>
 <div id="footer">
 	<?php $this->footer(); ?>
