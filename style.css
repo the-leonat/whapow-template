@@ -1066,17 +1066,29 @@ p + a::after {
   -ms-grid-row-align: end;
 }
 
-.w-box-size-wrapper[data-not-includes-6er-box] , .w-box-size-wrapper[data-includes-6er-box] {
+.w-box-size-wrapper.w-shipping-whapow , .w-box-size-wrapper.w-shipping-flatrate {
   opacity: 1;
   pointer-events: all;
 }
 
-.w-box-size-wrapper[data-includes-6er-box] .w-box-size-selector:first-child {
+.w-box-size-wrapper.w-shipping-whapow .w-box-size-selector:first-child {
   display: block;
 }
 
-.w-box-size-wrapper[data-not-includes-6er-box] .w-box-size-selector:first-child {
+.w-box-size-wrapper.w-shipping-flatrate .w-box-size-selector:first-child {
   display: none;
+}
+
+.w-shipping-cost-whapow, .w-shipping-cost-flatrate {
+  display: none;
+}
+
+.w-shipping-whapow .w-shipping-cost-whapow {
+  display: block;
+}
+
+.w-shipping-flatrate .w-shipping-cost-flatrate {
+  display: block;
 }
 
 

@@ -127,7 +127,8 @@ echo $s;
 		      <?php echo wc_price($p6->get_variation_regular_price()); ?>
 		    </span>
 		    <span class="w-price-meta">
-		      + 5,90€ Versand
+		      <span class="w-shipping-cost-whapow">+ 9,50€ Versand</span>
+					<span class="w-shipping-cost-flatrate">+ 5,90€ Versand</span>
 		    </span>
 		    <input class="w-button" type="button" value="6 Whapow" onclick="updateButton(this)" />
 		    <span class="w-selected" data-personalize-items="die neue, kleine!">ausgewählt</span>
@@ -185,8 +186,9 @@ echo $s;
 		      <?php echo wc_price($p12->get_variation_regular_price()); ?>
 		    </span>
 		    <span class="w-price-meta">
-		      + 5,90€ Versand
-		    </span>
+		      <span class="w-shipping-cost-whapow">+ 9,50€ Versand</span>
+					<span class="w-shipping-cost-flatrate">+ 5,90€ Versand</span>
+				</span>
 		    <input class="w-button" type="button" value="12 Whapow" onclick="updateButton(this)" />
 		    <span class="w-selected" data-personalize-items="klein aber oho!">ausgewählt</span>
 		  </div>
@@ -344,9 +346,10 @@ echo $s;
 			form.classList.add("hide");
 			console.log(parseInt(input));
 			if(plzs.includes(parseInt(input))) {
+				box.classList.add("w-shipping-whapow")
 				box.setAttribute("data-includes-6er-box", "");
 			} else {
-				box.setAttribute("data-not-includes-6er-box", "");
+				box.classList.add("w-shipping-flatrate")
 			}
 		}
 	})
