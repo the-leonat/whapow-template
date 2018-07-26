@@ -1079,7 +1079,12 @@ p + a::after {
   display: none;
 }
 
-.w-shipping-cost-whapow, .w-shipping-cost-flatrate {
+
+.w-shipping-cost-whapow {
+  display: block;
+}
+
+.w-shipping-cost-flatrate {
   display: none;
 }
 
@@ -1087,8 +1092,16 @@ p + a::after {
   display: block;
 }
 
+.w-shipping-whapow .w-shipping-cost-flatrate {
+  display: none;
+}
+
 .w-shipping-flatrate .w-shipping-cost-flatrate {
   display: block;
+}
+
+.w-shipping-flatrate .w-shipping-cost-whapow {
+  display: none;
 }
 
 

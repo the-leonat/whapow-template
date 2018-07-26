@@ -347,7 +347,6 @@ echo $s;
 			console.log(parseInt(input));
 			if(plzs.includes(parseInt(input))) {
 				box.classList.add("w-shipping-whapow")
-				box.setAttribute("data-includes-6er-box", "");
 			} else {
 				box.classList.add("w-shipping-flatrate")
 			}
