@@ -43,7 +43,7 @@ $p36 = get_variable_product_by_sku("whapow_box_36");
 
 	<div class="w-plz-form">
 		<div style="font-size:1.5em">
-			<span>Gebe deine PLZ ein:</span>
+			<span>Gib hier bitte Deine PLZ ein:</span>
 			<input id="plz-input" style="font-size:1.5em; background: none; box-shadow:none; padding-right: 0px;" type="text" maxlength="5" size="6" placeholder="00000"></input>
 		</div>
 		<?php
@@ -325,6 +325,10 @@ echo $s;
     <input type="hidden" name="variation_id" class="variation_id" value="0" />
     <input type="hidden" name="attribute_aufteilung"  value="1" />
     </form>
+		<p class="w-buy-whapow-shipment-notice">
+			Wenn du bis 11 Uhr bestellst bekommst du WHAPOW am Folgetag von Mi-Fr (werktags) zwischen 19 und 22 Uhr geliefert. <br />
+			Sei bitte zuhause sonst können wir WHAPOW nicht ausliefern, eine 2. Zustellung ist nicht möglich!
+		</p>
   </div>
 
 
@@ -339,6 +343,8 @@ echo $s;
 <script>
 	var plz = document.getElementById("plz-input");
 	var box = document.querySelector(".w-box-size-wrapper");
+	var body = document.querySelector("body");
+
 	var form = document.querySelector(".w-plz-form");
 	plz.addEventListener("keyup", function() {
 		var input = this.value;
@@ -347,8 +353,11 @@ echo $s;
 			console.log(parseInt(input));
 			if(plzs.includes(parseInt(input))) {
 				box.classList.add("w-shipping-whapow")
+				body.classList.add("w-shipping-whapow")
+
 			} else {
 				box.classList.add("w-shipping-flatrate")
+				body.classList.add("w-shipping-flatrate")
 			}
 		}
 	})

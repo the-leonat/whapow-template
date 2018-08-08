@@ -1131,6 +1131,16 @@ p + a::after {
   display: none;
 }
 
+.w-buy-whapow-shipment-notice {
+  display: none;
+  border: 2px solid red;
+  padding: 10px;
+}
+
+.w-shipping-whapow .w-buy-whapow-shipment-notice {
+  display: block;
+}
+
 
 
 
