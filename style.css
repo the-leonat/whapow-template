@@ -966,6 +966,7 @@ p + a::after {
       "headline-step-1 headline-step-1 headline-step-1"
       "description description description"
       "box box box"
+      "notice notice notice"
       "headline-step-2 headline-step-2 headline-step-2"
       "slider-wrapper slider-wrapper slider-wrapper"
       "buy buy buy";
@@ -1020,6 +1021,10 @@ p + a::after {
   -ms-grid-column-span: 5;
 }
 
+.w-notice-wrapper {
+  display: none;
+}
+
 @supports (display: grid) {
 
   .headline-step-1 {
@@ -1028,6 +1033,12 @@ p + a::after {
 
   .headline-step-2 {
     grid-area: headline-step-2;
+  }
+
+
+  .w-notice-wrapper {
+    display: block;
+    grid-area: notice;
   }
 
 }
@@ -1133,16 +1144,13 @@ p + a::after {
 
 .w-buy-whapow-shipment-notice {
   display: none;
-  border: 2px solid red;
+  border: 2px solid #009c41;
   padding: 10px;
 }
 
 .w-shipping-whapow .w-buy-whapow-shipment-notice {
   display: block;
 }
-
-
-
 
 @media only screen and (min-width: 769px) {
   .w-box-size-wrapper, .w-plz-form {
@@ -1436,6 +1444,10 @@ p + a::after {
   -webkit-transition-delay: 0.8s;
        -o-transition-delay: 0.8s;
           transition-delay: 0.8s;
+
+}
+
+.w-notice-wrapper {
 
 }
 

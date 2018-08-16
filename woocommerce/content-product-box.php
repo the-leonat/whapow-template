@@ -308,6 +308,12 @@ echo $s;
 		    <span class="w-selected" data-personalize-items="Masse mit Klasse!">ausgewählt</span>
 			</div>
 		</div>
+	<div class="w-notice-wrapper">
+		<p class="w-buy-whapow-shipment-notice">
+			Wenn du bis 11 Uhr bestellst bekommst du WHAPOW am Folgetag von Mi-Fr (werktags) zwischen 19 und 22 Uhr geliefert. <br />
+			Sei bitte zuhause sonst können wir WHAPOW nicht ausliefern, eine 2. Zustellung ist nicht möglich!
+		</p>
+	</div>
   <!-- Slider -->
   <h4 class="headline-step-2 w-step-2" id="step-2"><span>Wähle eine Verteilung.</span></h4>
 
@@ -325,10 +331,6 @@ echo $s;
     <input type="hidden" name="variation_id" class="variation_id" value="0" />
     <input type="hidden" name="attribute_aufteilung"  value="1" />
     </form>
-		<p class="w-buy-whapow-shipment-notice">
-			Wenn du bis 11 Uhr bestellst bekommst du WHAPOW am Folgetag von Mi-Fr (werktags) zwischen 19 und 22 Uhr geliefert. <br />
-			Sei bitte zuhause sonst können wir WHAPOW nicht ausliefern, eine 2. Zustellung ist nicht möglich!
-		</p>
   </div>
 
 
