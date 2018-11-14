@@ -69,7 +69,7 @@ foreach ((array) $delivery_zones as $key => $zone) {
         }
     }
 }
-$s .= implode(", ", $location_parts);
+$s .= "'" . implode("', '", $location_parts) . "'";
 $s .= "]";
 
 $s .= "</script> ";
@@ -350,8 +350,7 @@ echo $s;
 		var input = this.value;
 		if(input.length == 5) {
 			form.classList.add("hide");
-			console.log(parseInt(input));
-			if(plzs.includes(parseInt(input))) {
+			if(plzs.includes(input)) {
 				box.classList.add("w-shipping-whapow")
 				body.classList.add("w-shipping-whapow")
 
