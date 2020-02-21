@@ -80,7 +80,7 @@ do_action('storefront_header');?>
 
 	<div class="w-overview-content-wrapper">
 <!--		<input type="button" value="direkt kaufen" data-scroll-to="w-product-purchase" />-->
-      <a href="https://whapow.de/sprich-mit-uns/" class="button" style="margin-bottom: 10px">WHAPOW mündlich</a>
+      <a href="https://whapow.de/sprich-mit-uns/" class="button" style="margin-bottom: 10px">WHAPOW mündlich.</a>
       <p>Du möchtest lieber mit uns über WHAPOW reden? Dann gib uns Deine Telefonnummer und wir rufen Dich in den nächsten 24h zurück.</p>
 	</div>
 </section>
@@ -90,7 +90,7 @@ do_action('storefront_header');?>
 
 <?php echo do_shortcode('[product sku="whapow_passion"]'); ?>
 
-<?php echo do_shortcode('[product sku="whapow_box_12"]'); ?>
+<?php //echo do_shortcode('[product sku="whapow_box_12"]'); ?>
 
 <?php if (is_active_sidebar('media-echo')): ?>
 	<section id="w-media-echo" class="w-content-box">
