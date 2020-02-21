@@ -63,7 +63,7 @@ do_action('storefront_header');?>
 	</header><!-- #masthead -->
 
 	<div class="w-headline-container">
-		<h1><?php echo single_post_title("", false); ?><br/><span>ihh... ist das lecker, ahh... und gesund, ohh... nachhaltig auch noch!</span></h1>
+		<h1><?php echo single_post_title("", false); ?><br/><span>Ab sofort könnt Ihr unsere Produkte im myEnso-Online-Supermarkt bestellen.</span></h1>
 	</div>
 
 
@@ -80,9 +80,11 @@ do_action('storefront_header');?>
 
 	<div class="w-overview-content-wrapper">
 <!--		<input type="button" value="direkt kaufen" data-scroll-to="w-product-purchase" />-->
-      <a href="https://whapow.de/sprich-mit-uns/" class="button" style="margin-bottom: 10px">WHAPOW mündlich.</a>
-      <p>Du möchtest lieber mit uns über WHAPOW reden? Dann gib uns Deine Telefonnummer und wir rufen Dich in den nächsten 24h zurück.</p>
-	</div>
+      <a href="https://shop.myenso.de/login" class="button" style="margin-bottom: 10px">Whapow im myEnso-Shop kaufen</a>
+      <p>Da wir unsere gefrorenen Greenergizer im Mehrwegsystem, ohne Transport-Verpackungsmüll für Euch ausliefern, könnt Ihr sie bisher in diesen Städten bestellen:<br>
+	<small><b>Dresden, Leipzig, Berlin, Hamburg, Bremen, Hannover, Düsseldorf, Dortmund, Herne, Bochum, Essen, Mülheim an der Ruhr, Recklinghausen, Gelsenkirchen, Gladbeck, Oberhausen, Bottrop, Duisburg, Köln, Leverkusen, Frankfurt am Main, München, Nürnberg, Fürth, Erlangen.</b></small>
+      </p>
+   </div>
 </section>
 
 
