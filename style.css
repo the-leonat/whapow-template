@@ -1869,3 +1869,8 @@ input[type="range"]:focus::-ms-fill-upper {
   background: #fff !important;
  
 }
+
+/* remove shopping cart */
+.woocommerce-active .site-header .site-header-cart {
+  display: none !important;
+}
