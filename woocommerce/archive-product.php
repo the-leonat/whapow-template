@@ -90,7 +90,7 @@ do_action('storefront_header');?>
 
 <?php echo do_shortcode('[product sku="whapow_passion"]'); ?>
 
-<?php echo do_shortcode('[product sku="whapow_box_12"]'); ?>
+<?php //echo do_shortcode('[product sku="whapow_box_12"]'); ?>
 
 <?php if (is_active_sidebar('media-echo')): ?>
 	<section id="w-media-echo" class="w-content-box">
