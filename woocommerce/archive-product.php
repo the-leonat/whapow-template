@@ -80,7 +80,7 @@ do_action('storefront_header');?>
 
 	<div class="w-overview-content-wrapper">
 <!--		<input type="button" value="direkt kaufen" data-scroll-to="w-product-purchase" />-->
-      <a href="https://shop.myenso.de/login" class="button" style="margin-bottom: 10px">Whapow im myEnso-Shop kaufen</a>
+      <a href="https://www.myenso.de/content/brand/whapow" class="button" style="margin-bottom: 10px">Whapow im myEnso-Shop kaufen</a>
       <p>Da wir unsere gefrorenen Greenergizer im Mehrwegsystem, ohne Transport-Verpackungsmüll für Euch ausliefern, könnt Ihr sie bisher in diesen Städten bestellen:<br>
 	<small><b>Dresden, Leipzig, Berlin, Hamburg, Bremen, Hannover, Düsseldorf, Dortmund, Herne, Bochum, Essen, Mülheim an der Ruhr, Recklinghausen, Gelsenkirchen, Gladbeck, Oberhausen, Bottrop, Duisburg, Köln, Leverkusen, Frankfurt am Main, München, Nürnberg, Fürth, Erlangen.</b></small>
       </p>
